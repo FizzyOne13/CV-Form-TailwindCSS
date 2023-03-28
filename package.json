@@ -1,0 +1,15 @@
+{
+  "name": "cv-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i src/styles.css -o public/main.css --watch"
+  },
+  "keywords": [],
+  "author": "Fizzy_One13",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
