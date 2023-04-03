@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
+
+.text-area {
+  @apply mt-4 mb-2 mx-2 p-2 rounded-2xl h-full resize-none overscroll-none caret-blue-700 border-2 border-blue-400 hover:border-blue-500 focus:border-blue-600 outline-none text-gray-700 focus:border-[3px] hover:bg-slate-50 shadow shadow-blue-500 placeholder:text-slate-500 text-sm;
+}
+
+
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('./src/fonts/JosefinSans-VariableFont_wght.ttf');
+}
+

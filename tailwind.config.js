@@ -2,7 +2,6 @@
 module.exports = {
   content: ["./public/*.js", "./public/**/*.html"],
   theme: {
-    theme: {
       colors: {
         blue: "#1fb6ff",
         purple: "#7e5bef",
@@ -13,6 +12,7 @@ module.exports = {
         "gray-dark": "#273444",
         gray: "#8492a6",
         "gray-light": "#d3dce6",
+      },
         height: {
           "10v": "10vh",
           "20v": "20vh",
@@ -41,12 +41,15 @@ module.exports = {
       fontFamily: {
         sans: ["Graphik", "sans-serif"],
         serif: ["Merriweather", "serif"],
+        josefin: ["Josefin Sans", "sans-serif"],
       },
       extend: {
+        fontFamily: {},
         spacing: {},
         borderRadius: {},
-      },
+        backgroundImage: {
+          "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        },
     },
-  },
-  plugins: [],
-};
+    plugins: [],
+  };
