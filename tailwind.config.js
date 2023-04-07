@@ -46,9 +46,6 @@ module.exports = {
     },
   },
   extend: {
-    fontFamily: {},
-    spacing: {},
-    borderRadius: {},
     backgroundImage: {
       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
     },
