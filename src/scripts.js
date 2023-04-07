@@ -1,7 +1,5 @@
 const modal = document.getElementById("modal");
 
-document.onload = getName();
-
 function getName() {
   modal.style.display = "block";
 }
@@ -16,3 +14,9 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+function setName() {
+  let val = document.getElementById("name-input").value;
+  document.getElementById("name").innerHTML = val;
+  modal.style.display = "none";
+}

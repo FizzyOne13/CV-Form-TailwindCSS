@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/x-icon" href="../src/favicon.png" />
     <title>New CV</title>
   </head>
   <body
@@ -25,13 +26,21 @@
             <section
               class="bg-blue-200 rounded-2xl row-span-1 shadow-md shadow-blue-300"
             >
-              <p
-                id="name"
-                class="text-2xl font-extrabold text-blue-600 p-4 md:max-lg:text-lg md:max-md:text-lg"
-              >
-                Name Surname
-              </p>
+              <div class="group flex relative">
+                <p
+                  id="name"
+                  onclick="getName()"
+                  class="text-2xl font-extrabold text-blue-600 pt-4 pl-4 md:max-lg:text-lg md:max-md:text-lg hover:cursor-pointer hover:brightness-110"
+                >
+                  Name Surname
+                </p>
+                <span
+                  class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded absolute translate-x-1/3 translate-y-full opacity-0 m-[60px] min-[598px]:m-[28px] min-[1214px]:m-[28px] lg:m-[36px] mx-auto"
+                  >Click on me to correct</span
+                >
+              </div>
             </section>
+
             <section
               class="bg-blue-200 rounded-2xl row-span-2 shadow-md shadow-blue-300"
             >
@@ -115,16 +124,38 @@
       id="modal"
       class="w-screen h-screen top-0 left-0 z-10 bg-black bg-opacity-30 fixed"
     >
-      <div>
+      <div class="bottom-0 w-screen h-[200px] fixed">
         <div
-          class="bottom-0 w-screen h-[200px] fixed bg-blue-300 flex flex-col items-center justify-center"
+          class="bottom-0 w-screen h-[200px] fixed bg-gradient-to-tl from-blue-300 via-sky-300 to-cyan-300 flex flex-col items-center justify-center"
         >
-          <p class="mt-4 text-center">
+          <p
+            class="mb-6 text-center text-xl font-semibold text-blue-700 hover:opacity-90"
+          >
             Please enter your name and surname to start
           </p>
-          <input class="mt-4 place-self-center" type="text" value="" />
+          <div class="flex flex-row justify-center items-end">
+            <input
+              id="name-input"
+              class="mt-4 place-self-center w-[260px] rounded-l-md hover:opacity-80 pl-2"
+              type="text"
+              value=""
+              placeholder="Name Surname"
+            />
+            <button
+              id="confirm"
+              onclick="setName()"
+              class="h-6 w-20 bg-gradient-to-tl from-cyan-600 via-sky-700 to-blue-600 text-white rounded-r-md hover:opacity-90 active:brightness-125"
+            >
+              Confirm
+            </button>
+          </div>
         </div>
-        <button id="close" class="w-2 h-2 relative bg-white"></button>
+        <input
+          type="image"
+          src="../src/close.png"
+          id="close"
+          class="w-8 h-8 relative top-[3%] right-[-90%] md:right-[-94%] lg:right-[-96%] hover:opacity-80 active:brightness-75"
+        />
       </div>
     </div>
     <script type="text/javascript" src="../src/scripts.js"></script>
