@@ -11,115 +11,153 @@
   <body
     class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-700 via-cyan-700 to-blue-500"
   >
-    <div
-      class="grid grid-rows-2 lg:gap-x-6 gap-y-8 mx-6 my-4 w-auto h-full lg:grid-cols-2 lg:grid-rows-none lg:mx-12"
-    >
-      <section
-        class="flex bg-blue-300 rounded-2xl shadow-md shadow-blue-400 h-full lg:h-screen"
+    <!-- Here starts form, which is meant to collect all inputs, compile and send to user in printable manner, by e-mail perhaps-->
+    <form method="POST" name="CV-form" action="" enctype="multipart/form-data">
+      <div
+        class="grid grid-rows-2 lg:gap-x-6 gap-y-8 mx-6 my-4 w-auto h-full lg:grid-cols-2 lg:grid-rows-none lg:mx-12"
       >
-        <div
-          class="grid grid-cols-2 gap-x-2 w-full h-full md:max-md:grid-rows-2"
+        <section
+          class="flex bg-blue-300 rounded-2xl shadow-md shadow-blue-400 h-full lg:h-screen"
         >
           <div
-            class="grid grid-rows-5 gap-y-4 bg-blue-400 mx-6 my-4 rounded-2xl"
+            class="grid grid-cols-2 gap-x-2 w-full h-full md:max-md:grid-rows-2"
           >
-            <section
-              class="bg-blue-200 rounded-2xl row-span-1 shadow-md shadow-blue-300"
+            <div
+              class="grid grid-rows-5 gap-y-4 bg-blue-400 mx-6 my-4 rounded-2xl"
             >
-              <div class="group flex relative">
-                <p
-                  id="name"
-                  onclick="getName()"
-                  class="text-2xl font-extrabold text-blue-600 pt-4 pl-4 md:max-lg:text-lg md:max-md:text-lg hover:cursor-pointer hover:brightness-110"
-                >
-                  Name Surname
-                </p>
-                <span
-                  class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded absolute translate-x-1/3 translate-y-full opacity-0 m-[60px] min-[598px]:m-[28px] min-[1214px]:m-[28px] lg:m-[36px] mx-auto"
-                  >Click on me to correct</span
-                >
-              </div>
-            </section>
+              <section
+                class="bg-blue-200 rounded-2xl row-span-1 shadow-md shadow-blue-300"
+              >
+                <!-- This part is to enable the tooltip, that helpes to re-open modal name-setting part if mistake occured -->
+                <div class="group flex relative">
+                  <span
+                    id="name"
+                    name="Name"
+                    onclick="getName()"
+                    class="text-2xl font-extrabold text-blue-600 pt-4 pl-4 md:max-lg:text-lg md:max-md:text-lg hover:cursor-pointer hover:brightness-110 duration-100"
+                  >
+                    Name Surname
+                  </span>
 
-            <section
-              class="bg-blue-200 rounded-2xl row-span-2 shadow-md shadow-blue-300"
-            >
-              <section class="flex flex-col h-full">
-                <div
-                  class="text-sm font-extrabold text-blue-600 ml-3 mr-2 mt-2"
-                >
-                  Contact info
+                  <span
+                    class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded absolute translate-x-1/3 translate-y-full opacity-0 m-[60px] min-[598px]:m-[28px] min-[1214px]:m-[28px] lg:m-[36px] mx-auto duration-100"
+                    >Click on me to correct</span
+                  >
                 </div>
-                <textarea
-                  class="text-area"
-                  placeholder="Please state your address, phone, media here"
-                ></textarea>
               </section>
-            </section>
-            <section
-              class="bg-blue-200 rounded-2xl row-span-2 shadow-md shadow-blue-300"
+
+              <section
+                class="bg-blue-200 rounded-2xl row-span-2 shadow-md shadow-blue-300"
+              >
+                <section class="flex flex-col h-full">
+                  <label
+                    for="contact"
+                    class="text-sm font-extrabold text-blue-600 ml-3 mr-2 mt-2"
+                    >Contact info</label
+                  >
+                  <textarea
+                    id="contact"
+                    name="Contact"
+                    class="text-area"
+                    placeholder="Please state your address, phone, media here"
+                    required
+                  ></textarea>
+                </section>
+              </section>
+              <section
+                class="bg-blue-200 rounded-2xl row-span-2 shadow-md shadow-blue-300"
+              >
+                <section class="flex flex-col h-full">
+                  <label
+                    for="languages"
+                    class="text-base font-extrabold text-blue-600 ml-3 mr-2 mt-2"
+                    >Languages</label
+                  >
+                  <textarea
+                    id="languages"
+                    name="Languages"
+                    class="text-area"
+                    placeholder="Please indicate the languages you can speak"
+                    required
+                  ></textarea>
+                </section>
+              </section>
+            </div>
+            <div
+              class="bg-blue-200 mx-6 my-4 rounded-2xl shadow-md shadow-blue-300"
             >
               <section class="flex flex-col h-full">
-                <p
+                <label
+                  for="education"
                   class="text-base font-extrabold text-blue-600 ml-3 mr-2 mt-2"
+                  >Education & courses</label
                 >
-                  Languages
-                </p>
                 <textarea
+                  id="education"
+                  name="Education"
                   class="text-area"
-                  placeholder="Please indicate the languages you can speak"
+                  placeholder="Tell more about your education and further courses"
+                  required
                 ></textarea>
               </section>
-            </section>
+            </div>
           </div>
-          <div
-            class="bg-blue-200 mx-6 my-4 rounded-2xl shadow-md shadow-blue-300"
-          >
-            <section class="flex flex-col h-full">
-              <p class="text-base font-extrabold text-blue-600 ml-3 mr-2 mt-2">
-                Education & courses
-              </p>
+        </section>
+        <section
+          class="flex bg-blue-300 rounded-2xl shadow-md shadow-blue-400 h-full lg:h-screen"
+        >
+          <div class="grid grid-rows-2 gap-y-1 w-[90vw]">
+            <section
+              class="flex bg-blue-200 mx-6 my-4 rounded-2xl flex-col shadow-md shadow-blue-300"
+            >
+              <label
+                for="experience"
+                class="text-base font-extrabold text-blue-600 w-full h-5 mt-2 ml-4"
+                >Working experience</label
+              >
               <textarea
+                id="experience"
+                name="Experience"
                 class="text-area"
-                placeholder="Tell more about your education and further courses"
+                placeholder="Describe your working experience briefly"
+                required
+              ></textarea>
+            </section>
+            <section
+              class="flex bg-blue-200 mx-6 my-4 rounded-2xl flex-col shadow-md shadow-blue-300"
+            >
+              <label
+                for="profile"
+                class="text-base font-extrabold text-blue-600 w-full h-5 mt-2 ml-4"
+                >Profile</label
+              >
+              <textarea
+                id="profile"
+                name="Profile"
+                class="text-area"
+                placeholder="A few words about yourself and your personality relating to desired vacancy"
+                required
               ></textarea>
             </section>
           </div>
-        </div>
+        </section>
+      </div>
+      <section class="flex flex-col">
+        <input
+          type="image"
+          class="w-8 h-8 absolute mt-4 top-0 left-2 brightness-110 hover:opacity-80 shadow-md shadow-gray-800 rounded-md"
+          src="../src/reset.png"
+          alt="reset"
+        />
+        <input
+          type="image"
+          class="w-8 h-8 absolute mt-16 top-0 left-2 brightness-125 hover:opacity-80 shadow-md shadow-gray-800 rounded-md"
+          src="../src/up-chevron.png"
+          alt="submit"
+        />
       </section>
-      <section
-        class="flex bg-blue-300 rounded-2xl shadow-md shadow-blue-400 h-full lg:h-screen"
-      >
-        <div class="grid grid-rows-2 gap-y-1 w-[90vw]">
-          <section
-            class="flex bg-blue-200 mx-6 my-4 rounded-2xl flex-col shadow-md shadow-blue-300"
-          >
-            <div
-              class="text-base font-extrabold text-blue-600 w-full h-5 mt-2 ml-4"
-            >
-              Working experience
-            </div>
-            <textarea
-              class="text-area"
-              placeholder="Describe your working experience briefly"
-            ></textarea>
-          </section>
-          <section
-            class="flex bg-blue-200 mx-6 my-4 rounded-2xl flex-col shadow-md shadow-blue-300"
-          >
-            <div
-              class="text-base font-extrabold text-blue-600 w-full h-5 mt-2 ml-4"
-            >
-              Profile
-            </div>
-            <textarea
-              class="text-area"
-              placeholder="A few words about yourself and your personality relating to desired vacancy"
-            ></textarea>
-          </section>
-        </div>
-      </section>
-    </div>
+    </form>
+    <!-- Modal-like part to get name and surname of user, placed after the whole CV-page code-->
     <div
       id="modal"
       class="w-screen h-screen top-0 left-0 z-10 bg-black bg-opacity-30 fixed"
@@ -128,11 +166,11 @@
         <div
           class="bottom-0 w-screen h-[200px] fixed bg-gradient-to-tl from-blue-300 via-sky-300 to-cyan-300 flex flex-col items-center justify-center"
         >
-          <p
+          <span
             class="mb-6 text-center text-xl font-semibold text-blue-700 hover:opacity-90"
           >
             Please enter your name and surname to start
-          </p>
+          </span>
           <div class="flex flex-row justify-center items-end">
             <input
               id="name-input"
@@ -140,6 +178,7 @@
               type="text"
               value=""
               placeholder="Name Surname"
+              autofocus
             />
             <button
               id="confirm"
