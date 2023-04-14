@@ -13,11 +13,13 @@
   >
     <!-- Here starts form, which is meant to collect all inputs, compile and send to user in printable manner, by e-mail perhaps-->
     <form
-      action="https://formsubmit.co/fizzy.one22224402@gmail.com"
+      action="https://formsubmit.co/6ceeed809a32f171a8b855f9e4beb5ba"
       method="POST"
       name="CV-form"
       enctype="multipart/form-data"
     >
+      <!-- Captcha-->
+      <input type="hidden" name="_captcha" value="false" />
       <div
         class="grid grid-rows-2 lg:gap-x-6 gap-y-8 mx-6 my-4 w-auto h-full lg:grid-cols-2 lg:grid-rows-none lg:mx-12"
       >
@@ -40,6 +42,8 @@
                     name="Name"
                     onclick="getName()"
                     class="text-2xl font-extrabold text-blue-600 pt-4 pl-4 md:max-lg:text-lg md:max-md:text-lg hover:cursor-pointer hover:brightness-110 duration-100"
+                    required
+                    tabindex="0"
                   >
                     Name Surname
                   </span>
@@ -66,6 +70,7 @@
                     class="text-area"
                     placeholder="Please state your address, phone, media here"
                     required
+                    tabindex="1"
                   ></textarea>
                 </section>
               </section>
@@ -84,6 +89,7 @@
                     class="text-area"
                     placeholder="Please indicate the languages you can speak"
                     required
+                    tabindex="2"
                   ></textarea>
                 </section>
               </section>
@@ -103,6 +109,7 @@
                   class="text-area"
                   placeholder="Tell more about your education and further courses"
                   required
+                  tabindex="3"
                 ></textarea>
               </section>
             </div>
@@ -126,6 +133,7 @@
                 class="text-area"
                 placeholder="Describe your working experience briefly"
                 required
+                tabindex="4"
               ></textarea>
             </section>
             <section
@@ -142,6 +150,7 @@
                 class="text-area"
                 placeholder="A few words about yourself and your personality relating to desired vacancy"
                 required
+                tabindex="5"
               ></textarea>
             </section>
           </div>
@@ -161,6 +170,35 @@
           alt="submit"
         />
       </section>
+      <!-- Honeypot (dummy email&phone fields)-->
+      <label
+        for="Phone"
+        class="opacity-0 z-[-1] absolute w-0 h-0 top-0 left-0"
+        tabindex="-1"
+      ></label>
+      <input
+        id="phone"
+        name="Phone"
+        type="tel"
+        class="opacity-0 z-[-1] absolute w-0 h-0 top-0 left-0"
+        placeholder="Mention your phone here"
+        autocomplete="off"
+        tabindex="-1"
+      />
+      <label
+        for="Email"
+        class="opacity-0 z-[-1] absolute w-0 h-0 top-0 left-0"
+        tabindex="-1"
+      ></label>
+      <input
+        id="email"
+        name="Email"
+        type="email"
+        class="opacity-0 z-[-1] absolute w-0 h-0 top-0 left-0"
+        placeholder="Provide your email for feedback"
+        autocomplete="off"
+        tabindex="-1"
+      />
     </form>
     <!-- Modal-like part to get name and surname of user, placed after the whole CV-page code-->
     <div
